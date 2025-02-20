@@ -1,0 +1,19 @@
+{
+  "name": "svelte-icu-l10n",
+  "version": "1.0.0",
+  "description": "Core lib for svelte-icu-l10n",
+  "main": "index.ts",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "rollup --config rollup.config.ts --configPlugin typescript --watch --watch.onEnd='node ./bundle.js'",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.34.8",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  }
+}
