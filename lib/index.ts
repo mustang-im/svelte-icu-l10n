@@ -68,12 +68,12 @@ export function translateString(descriptor: MessageDescriptor, values: FormatVal
   if (!formatter) {
     throw new Error("Locale not set");
   }
-  let message: string = getTranslatedString(descriptor.id);
-  // @ts-ignore
-  if (!message) {
-    message = descriptor.defaultMessage;
-  }
-  return formatter.format(message, values);
+  let message: string = getTranslatedString(descriptor.id) ?? descriptor.defaultMessage;
+  try {
+    return formatter.format(message, values);
+  } catch (ex) {
+    return message;
+  };
 }
 
 function getTranslatedString(strID: string): string {
