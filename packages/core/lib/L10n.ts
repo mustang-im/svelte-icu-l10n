@@ -59,6 +59,19 @@ export class L10n {
 
     return this.translateString(msg, values);
   }
+
+  plural(num: number, variations: Record<string, string>) {
+    let pluralOptions = "";
+    Object.entries(variations).forEach(([key, value]) => {
+      pluralOptions += ` ${key} {${value}}`;
+    });
+    let str = `{num, plural,${pluralOptions}}`;
+    let message: MessageDescriptor = {
+      id: generateMessageId(str),
+      defaultMessage: str,
+    };
+    return this.translateString(message, { num });
+  }
 }
 
 export interface L10nConfig {
