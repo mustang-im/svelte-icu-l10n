@@ -2,7 +2,7 @@
   "name": "svelte-icu-l10n",
   "version": "1.0.0",
   "description": "Core lib for svelte-icu-l10n",
-  "main": "index.ts",
+  "main": "lib/index.ts",
   "license": "MIT",
   "private": true,
   "type": "module",
