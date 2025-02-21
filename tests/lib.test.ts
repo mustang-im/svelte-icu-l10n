@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { setLocale, t, plural } from '../lib';
+import { setLocale, t, plural } from '../core';
 
 test('Translation', () => {
   let messages = {

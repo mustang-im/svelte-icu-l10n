@@ -3,7 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-	input: 'lib/index.ts',
+	input: 'svelte/index.ts',
 	output: {
 		file: 'dist/index.js',
 	},
