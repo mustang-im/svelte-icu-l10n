@@ -6,6 +6,7 @@ export class L10n {
   messages: object = {};
   commentsSeparator: string = "*=>";
   formatter: MessageFormatter;
+  msgCache: Record<string, string> = {};
   typeHandlers: Record<string, TypeHandler>;
 
   constructor(config: L10nConfig) {
@@ -21,10 +22,7 @@ export class L10n {
    * @returns translated string
    */
   translateString(descriptor: MessageDescriptor, values: FormatValues): string {
-    let message: string;
-    if (descriptor.id) {
-      message = this.messages[descriptor.id];
-    }
+    let message: string = this.getTranslatedString(descriptor.id);
     // @ts-ignore
     if (!message) {
       message = descriptor.defaultMessage;
@@ -71,6 +69,15 @@ export class L10n {
       defaultMessage: str,
     };
     return this.translateString(message, { num });
+  }
+
+  getTranslatedString(strID: string): string {
+    if (this.msgCache[strID]) {
+      return this.msgCache[strID];
+    }
+    let str = this.messages[strID];
+    this.msgCache[strID] = str;
+    return str;
   }
 }
 
