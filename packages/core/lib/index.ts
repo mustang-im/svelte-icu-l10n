@@ -13,3 +13,10 @@ export function t(descriptor: TemplateStringsArray, ...args: any[]): string {
   }
   return l10n.t(descriptor,...args);
 }
+
+export function plural(num: number, variations: Record<string, string>): string {
+  if (!l10n) {
+    throw new Error('L10n instance not created');
+  }
+  return l10n.plural(num, variations);
+}
