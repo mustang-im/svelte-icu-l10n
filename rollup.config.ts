@@ -1,9 +1,15 @@
 import typescript from '@rollup/plugin-typescript';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
 	input: 'lib/index.ts',
 	output: {
-		file: 'dist/bundle.js',
+		file: 'dist/index.js',
 	},
-  plugins: [typescript()],
+  plugins: [
+    typescript(),
+    nodeResolve(),
+    commonjs(),
+  ],
 };
