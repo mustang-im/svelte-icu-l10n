@@ -1,6 +1,6 @@
 <!-- From <https://github.com/HenryLie/svelte-i18n-lingui/blob/main/src/lib/LegacyT.svelte> -->
 <script>
-	import { t } from '.';
+	import { t } from './index.js';
   import { onMount } from "svelte";
 
 	/**

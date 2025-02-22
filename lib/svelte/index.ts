@@ -1,5 +1,5 @@
 import { derived, writable } from "svelte/store";
-import { setLocale, t as _t, plural as _plural } from "../core";
+import { setLocale, t as _t, plural as _plural } from "../core/index.js";
 
 function createLocale(defaultLocale = "en-US", defaultMessages = {}) {
 	const { subscribe, set } = writable(defaultLocale);
