@@ -5,12 +5,12 @@
   "main": "lib/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/svelte/index.d.ts",
-      "import": "./dist/svelte/index.js"
+      "types": "./lib/svelte/index.d.ts",
+      "import": "./lib/svelte/index.js"
     },
     "./T.svelte": {
-      "types": "./dist/svelte/Trans.svelte.d.ts",
-      "svelte": "./dist/svelte/Trans.svelte.js"
+      "types": "./lib/svelte/Trans.svelte.d.ts",
+      "svelte": "./lib/svelte/Trans.svelte.js"
     }
   },
   "license": "MIT",
