@@ -1,6 +1,7 @@
 <!-- From <https://github.com/HenryLie/svelte-i18n-lingui/blob/main/src/lib/LegacyT.svelte> -->
 <script>
 	import { t } from '.';
+  import { onMount } from "svelte";
 
 	/**
 	 * @type {string}
@@ -9,8 +10,12 @@
 
 	let strings = [];
 
-	$: () => {
-		strings = $t(msg).split('#');
+  onMount(() => parse);
+
+  $: parse();
+
+	function parse() {
+		strings = $t([msg]).split('#');
 
 		if (strings.length > 6) {
 			console.error('svelte-i18n-lingui:', '<T> component can only have a maximum of 5 slots.');

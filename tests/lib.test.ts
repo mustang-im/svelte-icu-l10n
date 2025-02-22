@@ -16,4 +16,5 @@ test('Translation', () => {
   expect(plural(2, { one: "day", other: "days" })).toBe("días");
 
   expect(t`Press # to continue`).toBe('Pulse # para continuar');
+  expect(t(["Press # to continue"])).toBe('Pulse # para continuar');
 });
