@@ -23,4 +23,4 @@ export let t = derived(locale, () => gt);
 export let gPlural = _plural;
 export let plural = derived(locale, () => gPlural);
 
-export { default as Trans } from './Trans.svelte';
+export { default as T } from './Trans.svelte';

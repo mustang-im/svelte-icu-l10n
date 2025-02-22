@@ -3,7 +3,7 @@ import { generateMessageId } from "./generateMessageId";
 
 const defaultHanlders = { plural: pluralTypeHandler };
 let messages: Record<string, string> = {};
-let msgCache = {};
+let msgCache: Record<string, string> = {};
 let formatter: MessageFormatter;
 
 /**
