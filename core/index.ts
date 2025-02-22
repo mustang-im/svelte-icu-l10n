@@ -69,6 +69,9 @@ export function translateString(descriptor: MessageDescriptor, values: FormatVal
     throw new Error("Locale not set");
   }
   let message: string = getTranslatedString(descriptor.id) ?? descriptor.defaultMessage;
+  if (message == descriptor.id) {
+    message = descriptor.defaultMessage;
+  }
   try {
     return formatter.format(message, values);
   } catch (ex) {
